@@ -12,8 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Publish
-        uses: cloudflare/wrangler-action@2.0.0
         run: npm run publish --first-worker
-        with:
-          apiToken: ${{ secrets.TEST_CF_API_TOKEN }}
-          accountId: ${{ secrets.TEST_CF_ACCOUNT_ID }}
