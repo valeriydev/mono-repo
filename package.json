@@ -1,0 +1,16 @@
+{
+  "name": "mono-repo",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "npx wrangler dev",
+    "deploy": "npx wrangler publish"
+  },
+  "devDependencies": {
+    "wrangler": "2.6.2"
+  },
+  "workspaces": [
+    "first-worker",
+    "second-worker"
+  ],
+  "private": true
+}
