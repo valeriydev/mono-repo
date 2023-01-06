@@ -12,4 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Publish
-        run: npm run publish --second-worker
+        run: npm run publish --workspace=second-worker
