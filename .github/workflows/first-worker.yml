@@ -15,6 +15,6 @@ jobs:
       - name: Publish
         uses: cloudflare/wrangler-action@2.0.0
         with:
-          apiToken: ${{ secrets.MAIN_CF_API_TOKEN }}
-          accountId: ${{ secrets.MAIN_CF_ACCOUNT_ID }}
+          apiToken: ${{ secrets.TEST_CF_API_TOKEN }}
+          accountId: ${{ secrets.TEST_CF_ACCOUNT_ID }}
           command: publish --workspace=first-worker
