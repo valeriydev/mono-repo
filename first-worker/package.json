@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "npx wrangler dev",
-    "deploy": "npx wrangler publish"
+    "publish": "npx wrangler publish"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20221111.1",
