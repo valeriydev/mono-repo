@@ -17,4 +17,4 @@ jobs:
         with:
           apiToken: ${{ secrets.TEST_CF_API_TOKEN }}
           accountId: ${{ secrets.TEST_CF_ACCOUNT_ID }}
-          command: publish --workspace=first-worker
+          workingDirectory: 'first-worker'
