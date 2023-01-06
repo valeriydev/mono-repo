@@ -12,7 +12,9 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: Setup up node
-        uses: actions/setup-node@v2
       - name: Publish
-        run: npm run publish --workspace=second-worker
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.MAIN_CF_API_TOKEN }}
+          accountId: ${{ secrets.MAIN_CF_ACCOUNT_ID }}
+          command: publish --workspace=second-worker
