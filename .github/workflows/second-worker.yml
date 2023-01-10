@@ -2,6 +2,7 @@ on:
   push:
     branches:
       - master
+      - stage
     paths:
       - 'second-worker/**'
 
@@ -12,7 +13,15 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: Publish
+      - name: Publish for Main Branch
+        if: ${{ github.ref == 'refs/heads/master' }}
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.TEST_CF_API_TOKEN }}
+          accountId: ${{ secrets.TEST_CF_ACCOUNT_ID }}
+          workingDirectory: 'second-worker'
+      - name: Publish for Stage Branch
+        if: ${{ github.ref == 'refs/heads/stage' }}
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.TEST_CF_API_TOKEN }}
