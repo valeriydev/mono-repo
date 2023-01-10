@@ -25,6 +25,6 @@ export default {
 		env: Env,
 		ctx: ExecutionContext
 	): Promise<Response> {
-		return new Response("This is second worker test action x6!");
+		return new Response("This is second worker test action x7!");
 	},
 };
